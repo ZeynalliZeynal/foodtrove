@@ -1,0 +1,63 @@
+@use '../../../../scss/utils/variable' as *;
+@use '../../../../scss/utils/mixin' as *;
+@use '../../../../scss/utils/extend' as *;
+
+#nav-search {
+  form {
+    @include flexbox(center, space-between, nowrap);
+    border: 2px solid $teal-500;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .input {
+      padding: 1rem;
+      input {
+        font-size: $font-size-small;
+        &::placeholder {
+          font-size: $font-size-small;
+          color: $gray-500;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      .categories {
+        font-size: $font-size-regular;
+        margin-right: 8px;
+
+        select {
+          padding: 1rem;
+          height: 56px;
+          border-left: 1px solid $teal-500;
+        }
+      }
+      .search-btn {
+        width: 56px;
+        height: 56px;
+        padding: 1rem;
+        background-color: $red-500;
+        color: #fff;
+      }
+    }
+  }
+
+  .account {
+    justify-content: flex-end;
+    gap: 1rem;
+
+    .account-item a {
+      gap: 6px;
+
+      .account-icon {
+        transition: all 0.25s ease;
+      }
+      &:hover {
+        .account-icon {
+          transform: scale(1.3);
+          color: $red-500;
+        }
+      }
+    }
+  }
+}

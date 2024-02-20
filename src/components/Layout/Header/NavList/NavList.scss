@@ -1,0 +1,67 @@
+@use '../../../../scss/utils/variable' as *;
+@use '../../../../scss/utils/mixin' as *;
+@use '../../../../scss/utils/extend' as *;
+
+#nav-list {
+  height: 55px;
+  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+  background: #fff;
+
+  .sidebar-btn {
+    border: 1px solid $gray-200;
+    border-radius: 6px;
+
+    &:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .icon-frame {
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+    }
+  }
+  .list {
+    font-size: $font-size-medium;
+    font-weight: 500;
+    justify-content: space-between;
+
+    .list-item {
+      .list-item-btn {
+        gap: 6px;
+        position: relative;
+
+        &:hover {
+          &::after,
+          &::before {
+            width: 50%;
+          }
+        }
+
+        &::after {
+          @include before_after('', 50%, 2px, black);
+          @include position(absolute, $bottom: -5px, $left: 0);
+
+          border-top-left-radius: 25%;
+          border-bottom-left-radius: 25%;
+        }
+        &::before {
+          @include before_after('', 50%, 2px, black);
+          @include position(absolute, $bottom: -5px, $right: 0);
+
+          border-top-right-radius: 25%;
+          border-bottom-right-radius: 25%;
+        }
+
+        &::after,
+        &::before {
+          transition: all 0.3s ease;
+          width: 0;
+        }
+      }
+    }
+  }
+  .contact {
+    font-size: $font-size-regular;
+    gap: 6px;
+  }
+}
