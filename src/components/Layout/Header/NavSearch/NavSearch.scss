@@ -3,6 +3,8 @@
 @use '../../../../scss/utils/extend' as *;
 
 #nav-search {
+  @include position(sticky, $top: 0, $left: 0);
+  background-color: #fff;
   form {
     @include flexbox(center, space-between, nowrap);
     border: 2px solid $teal-500;

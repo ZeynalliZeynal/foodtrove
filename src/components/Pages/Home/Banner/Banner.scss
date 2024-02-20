@@ -1,0 +1,9 @@
+@use '../../../../scss/utils/variable' as *;
+@use '../../../../scss/utils/mixin' as *;
+@use '../../../../scss/utils/extend' as *;
+
+#banner {
+  @include bg-img(cover, no-repeat);
+  background-image: url(../../../../assets/img/bannerBg.png);
+  background-color: $gray-100;
+}
